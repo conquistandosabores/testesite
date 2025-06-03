@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Conquistando Sabores - Transforme Sua Paixão em Negócio</title>
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #FFF8E1;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+        
+        /* Tipografia */
+        h1, h2, h3, h4 {
+            color: #5D4037;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Seções */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(93, 64, 55, 0.8)), url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero h2 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .btn:hover {
+            background-color: #388E3C;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-large {
+            padding: 20px 30px;
+            font-size: 1.4rem;
+            display: block;
+            max-width: 90%;
+            margin: 30px auto;
+        }
+        
+        /* Imagem do produto */
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Benefícios */
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .benefit {
+            flex-basis: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit i {
+            font-size: 3rem;
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+        
+        /* E-books */
+        .ebooks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .ebook {
+            flex-basis: 100%;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .ebook-image {
+            width: 100px;
+            height: auto;
+            margin-right: 15px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        
+        .ebook-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+        
+        .ebook-content h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .ebook-content p {
+            font-size: 1rem;
+        }
+        
+        /* Bônus */
+        .bonus {
+            background-color: #FFF3CD;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            border-left: 5px solid #FFC107;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .bonus-image {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        
+        .bonus-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+        
+        .bonus-content {
+            flex-grow: 1;
+        }
+        
+        .bonus-content h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Depoimentos */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .testimonial {
+            flex-basis: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .stars {
+            color: #FFC107;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Preço */
+        .price-box {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+        
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #E53935; /* Vermelho */
+            font-weight: bold;
+        }
+        
+        .current-price {
+            font-size: 2.8rem;
+            color: #4CAF50; /* Verde */
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        /* FAQ */
+        .faq {
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Garantia */
+        .guarantee {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #E8F5E9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+        
+        .guarantee-icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #5D4037;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        /* Responsividade para tablets */
+        @media (min-width: 768px) {
+            .benefit {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .ebook {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .testimonial {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .bonus {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+            
+            .bonus-image {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            
+            .guarantee {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .guarantee-icon {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            
+            .btn {
+                width: auto;
+            }
+        }
+        
+        /* Responsividade para desktop */
+        @media (min-width: 992px) {
+            .benefit {
+                flex-basis: calc(33.333% - 20px);
+            }
+            
+            .testimonial {
+                flex-basis: calc(33.333% - 20px);
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Destaque de preço */
+        .price-highlight {
+            color: #E53935; /* Vermelho */
+            font-weight: bold;
+        }
+        
+        .price-current {
+            color: #4CAF50; /* Verde */
+            font-weight: bold;
+        }
+        
+        /* Ajustes específicos para mobile */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .ebook-image {
+                width: 80px;
+            }
+            
+            .current-price {
+                font-size: 2.2rem;
+            }
+            
+            .btn-large {
+                font-size: 1.2rem;
+                padding: 15px 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>De <span class="price-highlight">R$357,70</span> Por Apenas <span class="price-current">R$29,90</span> - Investimento Único que Retorna em Apenas Uma Venda</h1>
+            <h2>15 E-books + 3 Bônus com Mais de 350 Receitas Testadas e Aprovadas que Vendem Sozinhas</h2>
+            <a href="https://checkout.conquistandosabores.com.br/O3DDF48E5" class="btn">QUERO TRANSFORMAR MINHA PAIXÃO EM LUCRO</a>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <img src="images/Designsemnome(25).png" alt="Kit Conquistando Sabores" class="product-image">
+            
+            <p>Você sonha em transformar sua paixão por confeitaria em uma fonte de renda, mas se assusta com os altos custos para começar? Esqueça os cursos caríssimos e os equipamentos de luxo. O Kit Conquistando Sabores foi criado especialmente para pessoas como você, que desejam iniciar um negócio lucrativo de confeitaria sem comprometer suas economias.</p>
+            
+            <p>Com mais de 350 receitas testadas e aprovadas, distribuídas em 15 e-books completos, você terá em mãos um verdadeiro tesouro de conhecimento prático. São receitas que realmente vendem, desenvolvidas para encantar clientes e garantir seu sucesso desde o primeiro doce.</p>
+            
+            <h2>Por Que Este Kit é Diferente</h2>
+            
+            <p>O mercado está cheio de receitas genéricas que não geram resultados reais. O Kit Conquistando Sabores elimina o frustrante ciclo de tentativa e erro, oferecendo apenas receitas que já provaram seu valor no mercado. Cada uma delas foi cuidadosamente selecionada por seu potencial de venda, facilidade de execução e capacidade de impressionar clientes.</p>
+            
+            <p>Diferente de outros materiais disponíveis, nosso kit não exige experiência prévia ou formação em confeitaria. Desenvolvemos um método passo a passo que permite até mesmo iniciantes completos criarem doces profissionais desde o primeiro dia. Veja como confeiteiras comuns estão multiplicando seus ganhos em semanas, transformando simples receitas em um negócio próspero e satisfatório.</p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Receitas Lucrativas</h3>
+                    <p>Fórmulas testadas que vendem sozinhas e garantem alto retorno</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Fácil de Seguir</h3>
+                    <p>Passo a passo detalhado mesmo para quem nunca fez um doce</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Comece a vender e lucrar já nas primeiras semanas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>O Que Você Vai Receber</h2>
+            
+            <p>Ao adquirir o Kit Conquistando Sabores, você terá acesso imediato a um conjunto completo de conhecimentos práticos que transformarão sua relação com a confeitaria. Cada e-book foi desenvolvido para abordar um nicho específico e lucrativo do mercado, garantindo que você tenha um arsenal diversificado de opções para oferecer aos seus clientes.</p>
+            
+            <div class="ebooks">
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo1-Massas.png" alt="E-book Massas">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 1 - Massas</h3>
+                        <p>Receitas testadas e aprovadas, massas versáteis para todo tipo de bolo, perfeito para vender ou presentear.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo2-RecheioseCoberturas.png" alt="E-book Recheios e Coberturas">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 2 - Recheios e Coberturas</h3>
+                        <p>Recheios cremosos, estáveis e irresistíveis, combinações de sabores que vendem sozinhas.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo3-BolosDeConfeitaria.png" alt="E-book Bolos de Confeitaria">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 3 - Bolos de Confeitaria</h3>
+                        <p>Aprenda a montar bolos profissionais dignos de vitrine, eleve seu valor com bolos que impressionam pelo visual.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo4-BentoCake.png" alt="E-book Bento Cake">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 4 - Bento Cake</h3>
+                        <p>Fature com bolos pequenos, bonitos e lucrativos, modelos prontos para personalizar com frases e decorações únicas.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo5-BolosCaseiros.png" alt="E-book Bolos Caseiros">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 5 - Bolos Caseiros</h3>
+                        <p>Bolos que lembram a infância e ao aconchego do lar, fácil de fazer, difícil de esquecer, perfeito para vender fatias.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo6-ChantininhoDescomplicado.png" alt="E-book Chantininho Descomplicado">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 6 - Chantininho Descomplicado</h3>
+                        <p>O ponto certo do chantininho sem mistério, economize com ingredientes simples e eficientes.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo7-DocesDeFesta.png" alt="E-book Doces de Festa">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 7 - Doces de Festa</h3>
+                        <p>Doces clássicos e modernos que encantam a todos, despertam desejo com doces que vendem sozinhos.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo8-Brownies.png" alt="E-book Brownies">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 8 - Brownies</h3>
+                        <p>Receitas de brownies perfeitos por dentro e por fora, perfeito para vender em pedaços com alto valor agregado.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo9-BoloNoPote.png" alt="E-book Bolo No Pote">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 9 - Bolo No Pote</h3>
+                        <p>Segredos para montagem profissional e camadas perfeitas, fature muito com pouco investimento.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo10-ConesTrufados.png" alt="E-book Cones Trufados">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 10 - Cones Trufados</h3>
+                        <p>Recheios variados e combinações criativas que encantam clientes, lucro alto com baixo custo de produção.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo11-Cupcakes.png" alt="E-book Cupcakes">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 11 - Cupcakes</h3>
+                        <p>Crie cupcakes lindos por fora e deliciosos por dentro, personalize como quiser e venda com alto valor agregado.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo12-DocesFit.png" alt="E-book Doces Fit">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 12 - Doces Fit</h3>
+                        <p>Receitas deliciosas com menos açúcar e calorias, perfeito para vender para o público saudável e fitness.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo13-TrufaseBrigadeirosGourmet.png" alt="E-book Trufas e Brigadeiros">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 13 - Trufas e Brigadeiros</h3>
+                        <p>Acabamento profissional mesmo sendo iniciante, receitas irresistíveis com brilho, sabor e textura perfeitos.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo14-Pudim.png" alt="E-book Pudins">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 14 - Pudins</h3>
+                        <p>Sabores além do tradicional, aprenda pudins cremosos, firmes e com calda brilhante para vender ou presentear.</p>
+                    </div>
+                </div>
+                
+                <div class="ebook">
+                    <div class="ebook-image">
+                        <img src="images/Módulo15-OvosDePáscoa.png" alt="E-book Ovos de Páscoa">
+                    </div>
+                    <div class="ebook-content">
+                        <h3>E-book 15 - Ovos de Páscoa</h3>
+                        <p>Aprenda a criar ovos de Páscoa recheados, gourmet e únicos, receitas e ideias para vender MUITO na páscoa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Bônus Exclusivos</h2>
+            
+            <p>Além dos 15 e-books principais, você receberá 3 bônus exclusivos que aceleram seu sucesso:</p>
+            
+            <div class="bonus">
+                <div class="bonus-image">
+                    <img src="images/Bônus1-MarketingeVendas.png" alt="Bônus Marketing e Vendas">
+                </div>
+                <div class="bonus-content">
+                    <h3>Bônus 1: E-book de Marketing e Vendas</h3>
+                    <p><strong class="price-highlight">Valor: R$ 39,90</strong></p>
+                    <p>Aprenda como vender seus doces todos os dias, mesmo começando do zero. Você aprenderá a usar o Instagram e WhatsApp como vitrines poderosas, transformando seguidores em clientes fiéis.</p>
+                </div>
+            </div>
+            
+            <div class="bonus">
+                <div class="bonus-image">
+                    <img src="images/Bônus2-PadariaCaseira.png" alt="Bônus Padaria Caseira">
+                </div>
+                <div class="bonus-content">
+                    <h3>Bônus 2: E-book de Padaria Caseira</h3>
+                    <p><strong class="price-highlight">Valor: R$ 49,90</strong></p>
+                    <p>Descubra a alta lucratividade com receitas simples e econômicas, com passo a passo descomplicado até para quem nunca fez pão.</p>
+                </div>
+            </div>
+            
+            <div class="bonus">
+                <div class="bonus-image">
+                    <img src="images/Bônus3-ReceitasDeLiquidificador.png" alt="Bônus Receitas de Liquidificador">
+                </div>
+                <div class="bonus-content">
+                    <h3>Bônus 3: E-book Receitas de Liquidificador</h3>
+                    <p><strong class="price-highlight">Valor: R$ 19,90</strong></p>
+                    <p>Praticidade com receitas rápidas e deliciosas que economizam tempo e esforço sem comprometer o sabor.</p>
+                </div>
+            </div>
+            
+            <p>Como se não bastasse, você ainda recebe acesso vitalício a todo o conteúdo e garantia de satisfação de 15 dias. Se por qualquer motivo você não ficar satisfeito, devolvemos seu dinheiro sem burocracia.</p>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Confeiteiras Comuns que Transformaram Receitas em Renda Extra</h2>
+            
+            <p>Não acredite apenas em nossas palavras. Veja o que dizem pessoas reais que transformaram suas vidas com o Kit Conquistando Sabores. São histórias de sucesso de confeiteiras comuns que, assim como você, começaram do zero e hoje conquistaram independência financeira através da confeitaria.</p>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Juliana">
+                    </div>
+                    <h3>Juliana</h3>
+                    <div class="stars">★★★★★</div>
+                    <p>"Vendi mais de R$1.200 em bolos na primeira semana! As receitas são claras e cada passo faz toda a diferença."</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rita">
+                    </div>
+                    <h3>Rita</h3>
+                    <div class="stars">★★★★★</div>
+                    <p>"Nunca imaginei que receitas simples pudessem ser tão completas! Me sinto uma verdadeira chef de confeitaria."</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Luana">
+                    </div>
+                    <h3>Luana</h3>
+                    <div class="stars">★★★★★</div>
+                    <p>"Tentei a receita de brownie com o passo a passo e trabalhei tudo em menos de 3 horas. Farei mais com certeza!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Quem Pode Se Beneficiar</h2>
+            
+            <p>O Kit Conquistando Sabores é perfeito para diversos perfis de pessoas que desejam transformar a confeitaria em fonte de renda. Se você é mãe e busca uma atividade lucrativa que possa conciliar com os cuidados da família, encontrará aqui receitas práticas que podem ser preparadas nos seus horários disponíveis.</p>
+            
+            <p>Para quem está desempregado ou busca complementar a renda atual, o kit oferece um caminho rápido para começar a faturar, com baixo investimento inicial e retorno potencialmente imediato. Estudantes também encontram uma excelente oportunidade de negócio paralelo, com receitas que podem ser preparadas nos intervalos dos estudos.</p>
+            
+            <p>Mesmo profissionais que já atuam na área de confeitaria se beneficiam enormemente, ampliando seu repertório com receitas diferenciadas que agregam valor ao seu catálogo atual. E para quem simplesmente ama confeitaria e sonha em transformar esse hobby em negócio, este kit é o primeiro passo para realizar esse sonho com segurança e conhecimento prático.</p>
+        </div>
+    </section>
+    
+    <section id="oferta">
+        <div class="container">
+            <h2>Investimento Único que Retorna em Apenas Uma Venda</h2>
+            
+            <div class="price-box">
+                <p>Pense no valor que você está recebendo:</p>
+                <ul style="list-style: none; margin-bottom: 20px;">
+                    <li>✓ Kit Conquistando Sabores de 15 E-books que sozinhos custam <strong class="price-highlight">R$ 247,00</strong></li>
+                    <li>✓ Bônus 1 E-book de Marketing e Vendas <strong class="price-highlight">R$ 39,90</strong></li>
+                    <li>✓ Bônus 2 E-book de Padaria Caseira <strong class="price-highlight">R$ 49,90</strong></li>
+                    <li>✓ Bônus 3 E-book Receitas de Liquidificador <strong class="price-highlight">R$ 19,90</strong></li>
+                    <li>✓ Acesso vitalício + Garantia de 15 dias</li>
+                </ul>
+                
+                <p class="original-price">De R$ 357,70</p>
+                <p>POR APENAS</p>
+                <p class="current-price">R$ 29,90</p>
+                <p>Pagamento único • Sem mensalidades • Entrega imediata</p>
+            </div>
+            
+            <p>Isso representa menos de R$ 2,00 por e-book. Menos do que o custo de um café. E diferente do café, este é um investimento que continua gerando retorno dia após dia, receita após receita.</p>
+            
+            <p>O pagamento é único, sem mensalidades ou taxas escondidas. Você recebe acesso imediato a todo o conteúdo diretamente no seu e-mail em até 2 minutos após a compra.</p>
+            
+            <a href="https://checkout.conquistandosabores.com.br/O3DDF48E5" class="btn btn-large">SIM, EU QUERO GARANTIR MEU ACESSO</a>
+            
+            <div class="guarantee">
+                <div class="guarantee-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                    <h3>Garantia de 15 Dias</h3>
+                    <p>Experimente sem risco: oferecemos garantia total de satisfação por 15 dias. Se por qualquer motivo você não ficar satisfeito com o conteúdo, basta solicitar o reembolso e devolveremos 100% do seu investimento, sem perguntas, sem burocracia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq">
+                <div class="faq-item">
+                    <p class="faq-question">P: Como recebo os e-books?</p>
+                    <p>R: Link direto no seu e-mail em até 2 minutos após a compra.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">P: Posso acessar pelo celular?</p>
+                    <p>R: Sim! Todos os arquivos são compatíveis com dispositivos móveis.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">P: Preciso ser profissional?</p>
+                    <p>R: Não — o método foi feito para iniciantes e avançados.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">P: E se eu não gostar?</p>
+                    <p>R: Peça reembolso em até 15 dias, sem burocracia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Você está a um passo de embarcar numa jornada saborosa e lucrativa</h2>
+            
+            <p>Imagine-se daqui a algumas semanas, recebendo pedidos, encantando clientes e, o mais importante, vendo sua conta bancária crescer com um trabalho que você ama fazer.</p>
+            
+            <p>Centenas de pessoas já transformaram suas vidas com o Kit Conquistando Sabores. Agora é sua vez. Não deixe que o medo ou a indecisão adie seus sonhos por mais um dia. Lembre-se: você tem a garantia de 15 dias para testar todo o conteúdo sem risco algum.</p>
+            
+            <a href="https://checkout.conquistandosabores.com.br/O3DDF48E5" class="btn btn-large">QUERO COMEÇAR AGORA</a>
+            
+            <p style="text-align: center; margin-top: 20px;">
+                <i class="fas fa-lock"></i> Compra segura com garantia de 15 dias. Se não gostar, devolvemos seu dinheiro.
+            </p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Kit Conquistando Sabores - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
